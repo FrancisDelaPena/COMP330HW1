@@ -11,14 +11,23 @@ class TestTweet(unittest.TestCase):
     def setUp(self):
         pass
 
+    def test_none(self):
+        self.assertIsNotNone(NotTwitter.findmention(extweet))
+
     def test_mention(self):
         self.assertTrue(NotTwitter.findmention(extweet))
 
+    def test_none2(self):
+        self.assertIsNotNone(NotTwitter.findhashtag(extweet))
+    
     def test_hashtag(self):
         self.assertTrue(NotTwitter.findhashtag(extweet))
 
+    def test_none3(self):
+        self.assertIsNotNone(NotTwitter.findurl(extweet))
+
     def test_findurl(self):
         self.assertTrue(NotTwitter.findurl(extweet))
-
+        
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main() #All tests should pass in this case
